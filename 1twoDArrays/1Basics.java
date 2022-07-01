@@ -53,5 +53,5 @@ class Main{
         // Now print the array using display function
 
         display(nums);
-	}
+    }
 }

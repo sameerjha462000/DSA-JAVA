@@ -4,6 +4,32 @@ import java.util.*;
 import java.io.*;
 
 class Main{
+    private static void initializeIO(){
+        try 
+        {
+            System.setIn(new FileInputStream("input.txt"));
+            System.setOut(new PrintStream(new FileOutputStream("output.txt")));
+            System.setErr(new PrintStream(new FileOutputStream("error.txt")));
+        } 
+        catch (Exception e) 
+        {
+            System.err.println(e.getMessage());
+        }
+    }
+    public static void display(int[][] nums){
+        // find no of rows and columns
+        int nr = nums.length;
+        int nc = nums[0].length;
+
+        // display linewise
+
+        for(int i=0;i<nr;i++){
+            for(int j=0;j<nc;j++){
+                System.out.print(nums[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args){
         initializeIO();
         Scanner scn = new Scanner(System.in);
@@ -28,30 +54,4 @@ class Main{
 
         display(nums);
 	}
-    public static void display(int[][] nums){
-        // find no of rows and columns
-        int nr = nums.length;
-        int nc = nums[0].length;
-
-        // display linewise
-
-        for(int i=0;i<nr;i++){
-            for(int j=0;j<nc;j++){
-                System.out.print(nums[i][j]+" ");
-            }
-            System.out.println();
-        }
-    }
-	private static void initializeIO(){
-    	try 
-    	{
-            System.setIn(new FileInputStream("input.txt"));
-            System.setOut(new PrintStream(new FileOutputStream("output.txt")));
-            System.setErr(new PrintStream(new FileOutputStream("error.txt")));
-        } 
-        catch (Exception e) 
-        {
-            System.err.println(e.getMessage());
-        }
-    }
 }

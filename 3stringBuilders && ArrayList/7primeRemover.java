@@ -3,10 +3,9 @@ import java.lang.*;
 import java.util.*;
 import java.io.*;
 /*
-    problem -- https://www.pepcoding.com/resources/online-java-foundation/string,-string-builder-and-arraylist/print-all-permutations-of-a-string-iteratively-official/ojquestion
+    problem -- https://www.pepcoding.com/resources/online-java-foundation/string,-string-builder-and-arraylist/remove-primes-official/ojquestion
 */
 class Main{
-    // We will be writing the algorithm keeping in mind that all the characters are different
     public static void main(String ...args){
         initializeIO();
         Scanner scn = new Scanner(System.in);

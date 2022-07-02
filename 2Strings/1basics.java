@@ -7,7 +7,6 @@ import java.io.*;
 class Main{
     public static void main(String ...args){
         initializeIO();
-        Scanner scn = new Scanner(System.in);
 
         // Intern pool is in Heap...
         // Shell is also always in Heap, however the name of the String is always in stack and stores the reference of the shell

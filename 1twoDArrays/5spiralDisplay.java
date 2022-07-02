@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 
-// problem -- https://nados.io/question/spiral-display
+// problem -- https://www.pepcoding.com/resources/online-java-foundation/2d-arrays/spiral-display-official/ojquestion
 class Main{
     public static void main(String ...args){
         initializeIO();

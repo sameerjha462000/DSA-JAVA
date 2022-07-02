@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 
-// problem -- https://nados.io/question/the-state-of-wakanda-1
+// problem -- https://www.pepcoding.com/resources/online-java-foundation/2d-arrays/wakanda-1-official/ojquestion
 class Main{
     public static void main(String ...args){
         initializeIO();

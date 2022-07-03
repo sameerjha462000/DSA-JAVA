@@ -4,8 +4,7 @@ import java.util.*;
 import java.io.*;
 
 /*
-    1 <= x <= 10
-    0 <= n <= 9
+    3 2 1 1 1 2 1 1 1 2 3 2 1 1 1 2 1 1 1 2 3 
 */
 class Main{
     public static void main(String ...args){

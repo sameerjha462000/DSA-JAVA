@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 /*
-    problem -- find last index of x in nums
+    problem -- find all indices of x in nums
 */
 
 class Main{

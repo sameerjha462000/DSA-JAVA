@@ -21,14 +21,14 @@ class Main{
     public static void displayReverse(int[] nums){
         int choice = 3;
 
-        // if(choice == 1)
-            // displayReverseHelper1(nums,0); // using valid base case
-        // else if(choice == 2)
+        if(choice == 1)
+            displayReverseHelper1(nums,0); // using valid base case
+        else if(choice == 2)
             displayReverseHelper2(nums,0); // using invalid base case
-        // else if(choice == 3)
-            // displayReverseHelper3(nums,nums.length-1); // using valid base case
-        // else
-            // displayReverseHelper4(nums,nums.length-1); // using invalid base case
+        else if(choice == 3)
+            displayReverseHelper3(nums,nums.length-1); // using valid base case
+        else
+            displayReverseHelper4(nums,nums.length-1); // using invalid base case
     }
 
     public static void displayReverseHelper1(int[] nums, int idx){

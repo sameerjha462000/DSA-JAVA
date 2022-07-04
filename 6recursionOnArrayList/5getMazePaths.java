@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 /*
-    problem -- This is keypad combination problem...
+    problem -- This is get maze paths problem...
 */
 
 class Main{

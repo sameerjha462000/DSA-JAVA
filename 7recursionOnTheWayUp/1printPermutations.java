@@ -3,10 +3,6 @@ import java.lang.*;
 import java.util.*;
 import java.io.*;
 
-/*
-    problem -- 
-*/
-
 class Main{
     public static void main(String ...args){
         initializeIO();

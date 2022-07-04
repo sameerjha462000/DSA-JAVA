@@ -46,7 +46,7 @@ class Main{
 
     public static ArrayList<String> getSubsHelper2(String s){
 
-        
+        // In case the String has length has length == 1, then the number of subsequences are 2
         if(s.length() == 1){
             ArrayList<String> base = new ArrayList<>();
             base.add("");

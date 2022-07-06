@@ -226,6 +226,14 @@ class linkedlist{
         size = 0;
     }
 
+    int size(){
+        return size;
+    }
+
+    boolean isEmpty(){
+        return size == 0;
+    }
+
     @Override
     public String toString(){
         if(size == 0)

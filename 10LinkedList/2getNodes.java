@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.*;
 
 
-// added get nodes functions line no 239...
+// added get nodes functions at 239...
 class node{
     int data;
     node next;

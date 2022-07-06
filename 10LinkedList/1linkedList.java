@@ -218,6 +218,14 @@ class linkedlist{
         return false;
     }
 
+    void clear(){
+        if(size == 0)
+            return;
+
+        head = tail = null;
+        size = 0;
+    }
+
     @Override
     public String toString(){
         if(size == 0)
@@ -247,7 +255,8 @@ class Main{
         l.removeLast();
         System.out.println(l);
         System.out.println(l.contains(40));
-        
+        l.clear();
+        System.out.println(l);
     }
 
     private static void initializeIO(){

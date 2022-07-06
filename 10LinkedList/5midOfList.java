@@ -413,7 +413,7 @@ class Main{
         }
         System.out.println(l);
 
-        System.out.println(l.KthNodeFromEnd(3));
+//         System.out.println(l.KthNodeFromEnd(3));
         System.out.println(l.midTwo());
         l.removeLast();
         System.out.println(l);

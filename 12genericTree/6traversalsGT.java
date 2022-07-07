@@ -64,7 +64,7 @@ class Main{
 
     	// node post means node pr call over hone se pehle last kaam
     	System.out.println("node post " + root.data);
-  }
+  	}
 
 	public static node constructGT(Integer[] vals){
 

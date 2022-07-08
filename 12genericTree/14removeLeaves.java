@@ -62,6 +62,7 @@ class Main{
 
 		for(node child : root.children)
 			removeLeaves(child);
+		// base case
 		if(root.children.size() == 0)
 			return;
 	}

@@ -43,7 +43,7 @@ class Main{
 						  null,120,null,null,90,null,null,40,100,null,null,null};
 
 		node root = constructGT(vals);
-		System.out.println(height(root));
+		removeLeaves(root);
 	}
 
 	public static void removeLeaves(node root)

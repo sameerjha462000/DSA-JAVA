@@ -4,19 +4,19 @@ import static java.lang.System.*;
 import java.util.Stack;
 import java.util.Queue;
 
-		/**
-		 * Author : @sam45jh
-		 **/
+	/**
+	 * Author : @sam45jh
+	 **/
 
-		/**
+	/**
          * Tree (By the way this is a Binary search tree now that i see this)
          * because its inorder is sorted already
-         * 		   ___50
-         * 	      /     \
+         *         ___50
+         * 	  /     \
          *       25     75
          *      / \    / \
          *     12 37  62  87
-         * 	      /    \
+         * 	  /    \
          *       30    70
          * 
          * preorder : root left right -- 50 25 12 37 30 75 62 70 87
@@ -88,6 +88,7 @@ class pair{
 		this.first = first;
 		this.state = state;
 	}
+	
 	@Override
 	public String toString()
 	{
@@ -225,7 +226,7 @@ class BT{
 	}
 
 	void preOrderIterative()
-    {
+    	{
           Stack<node> st = new Stack<>();
 
           st.push(root);
@@ -247,7 +248,7 @@ class BT{
           }
     }
 
-    void postOrderIterative()
+    	void postOrderIterative()
 	{
 		Stack<node> mainStack = new Stack<>();
 		Stack<node> helperStack = new Stack<>();
@@ -278,7 +279,7 @@ class BT{
 	}
 
 	void inOrderIterative()
-    {
+    	{
           Stack<node> st = new Stack<>();
           st.push(root);
 
@@ -307,7 +308,7 @@ class BT{
                       }
                 }
           }
-    }
+    	}
 
 	private void toStringHelper(node root,StringBuilder ans)
 	{

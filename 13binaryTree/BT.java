@@ -1269,6 +1269,33 @@ class BT{
 		return sumOne + sumTwo + root.data;
 	}
 	
+	int LCA(int x,int y)
+	{
+		/** Assuming that x and y are present in the tree
+		 **/
+
+		List<Integer> xNTRP = NTRP(x);
+		List<Integer> yNTRP = NTRP(y);
+
+		int i = xNTRP.size()-1;
+		int j = yNTRP.size()-1;
+
+		while(i >= 0 && j >= 0)
+		{
+			if(xNTRP.get(i) == yNTRP.get(j))
+			{
+				i--;
+				j--;
+			}else{
+				break;
+			}
+		}
+
+		/* LCA would be present at i+1 index of NTRP or j+1 index of yNTRP */
+
+		return xNTRP.get(i+1); // yNTRP.get(j)
+	}
+	
 	@Override
 	public String toString()
 	{

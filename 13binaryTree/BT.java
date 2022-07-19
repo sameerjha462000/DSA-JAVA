@@ -1296,6 +1296,76 @@ class BT{
 		return xNTRP.get(i+1); // yNTRP.get(j)
 	}
 	
+	int distance(int x,int y)
+	{
+		List<Integer> xPath = NTRP(x);
+		List<Integer> yPath = NTRP(y);
+
+		int i = xPath.size()-1;
+		int j = yPath.size()-1;
+
+		while(i >= 0 && j >= 0)
+		{
+			if(xPath.get(i) == yPath.get(j))
+			{
+				i--;
+				j--;
+			}else{
+				break;
+			}
+		}
+
+		/**
+		 * The distance between them is the number of edges in the path from x to y through LCA
+		 * So the distance is sum of indices of LCA in xPath and yPath.
+		 **/
+
+		i++;
+		j++;
+		return i+j;
+	}
+
+	List<Integer> path(int x, int y)
+	{
+		List<Integer> xPath = NTRP(x);
+		List<Integer> yPath = NTRP(y);
+
+		List<Integer> path = new ArrayList<>();
+
+		int i = xPath.size()-1;
+		int j = yPath.size()-1;
+
+		while(i >= 0 && j >= 0)
+		{
+			if(xPath.get(i) == yPath.get(j))
+			{
+				i--;
+				j--;
+			}else{
+				break;
+			}
+		}
+
+		i++;
+		// j++;
+
+		int idx = 0;
+
+		while(idx <= i)
+		{
+			path.add(xPath.get(idx));
+			idx++;
+		}
+
+		while(j >= 0)
+		{
+			path.add(yPath.get(j));
+			j--;
+		}
+
+		return path;
+	}
+	
 	@Override
 	public String toString()
 	{

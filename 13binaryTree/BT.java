@@ -501,6 +501,84 @@ class BT{
 		return new ArrayList<>();
 
 	}
+	
+	List<Integer> kLevelDown(int k)
+	{
+		List<Integer> ans = new ArrayList<>();
+		kLevelDownHelper(root,k,ans);
+		return ans;
+	}
+
+	private void kLevelDownHelper(node root,int k,List<Integer> ans)
+	{
+		if(root == null)
+			return ;
+		if(k == 0)
+		{
+			ans.add(root.data);
+			return;
+		}
+
+		kLevelDownHelper(root.left,k-1,ans);
+		kLevelDownHelper(root.right,k-1,ans);
+	}
+
+	List<Integer> leafNodes()
+	{
+		List<Integer> ans = new ArrayList<>();
+
+		leafNodesHelper(root,ans);
+
+		return ans;
+	}
+
+	void leafNodesHelper(node root,List<Integer> ans)
+	{
+		if(root == null)
+			return ;
+
+		if(root.left == null && root.right == null)
+		{
+			ans.add(root.data);
+		}
+
+		leafNodesHelper(root.left,ans);
+		leafNodesHelper(root.right,ans);
+
+	}
+
+	void removeLeafNodes()
+	{
+		removeLeafNodesHelper(root);
+	}
+
+	void removeLeafNodesHelper(node root)
+	{
+		if(root == null)
+			return;
+
+		if(root.left != null)
+		{
+			// do something
+			if(root.left.left == null && root.left.right == null)
+			{
+				root.left = null;
+			}
+		}
+
+		if(root.right != null)
+		{
+			// do something...
+
+			if(root.right.left == null && root.right.right == null)
+			{
+				root.right = null;
+			}
+		}
+
+		removeLeafNodesHelper(root.left);
+		removeLeafNodesHelper(root.right);
+	}
 
 	@Override
 	public String toString()

@@ -246,7 +246,7 @@ class BT{
                   st.push(top.left);
                 }
           }
-    }
+    	}
 
     	void postOrderIterative()
 	{
@@ -331,6 +331,175 @@ class BT{
 
 		toStringHelper(root.left,ans);
 		toStringHelper(root.right,ans);
+	}
+	
+	void levelOrder()
+    	{
+		Queue<node> mainQ = new ArrayDeque<node>();
+		Queue<node> helperQ = new ArrayDeque<node>();
+
+		mainQ.add(root);
+
+		while(!mainQ.isEmpty())
+			{
+				node removed = mainQ.remove();
+
+				System.out.print(removed.data + " ");
+
+				if(removed.left != null)
+					helperQ.add(removed.left);
+
+				if(removed.right != null)
+				{
+					helperQ.add(removed.right);
+				}
+
+				if(mainQ.isEmpty())
+				{
+					// System.out.println();
+					Queue<node> temp = mainQ;
+					mainQ = helperQ;
+					helperQ = temp;
+					System.out.println();
+				}
+			}
+    	}
+
+	    int size()
+	    {
+		return sizeHelper(root);
+	    }
+
+	    private int sizeHelper(node root)
+	    {
+		if(root == null)
+			return 0;
+
+		return sizeHelper(root.left)+sizeHelper(root.right)+1;
+	    }
+
+	    int sum()
+	    {
+		return sumHelper(root);
+	    }
+
+	    private int sumHelper(node root)
+	    {
+		if(root == null)
+			return 0;
+
+		return sumHelper(root.left)+sumHelper(root.right)+root.data;
+	    }
+
+	    int height()
+	    {
+		return heightHelper(root);
+	    }
+
+	    private int heightHelper(node root)
+	    {
+		if(root == null)
+			return -1;
+
+		return Math.max(heightHelper(root.left),heightHelper(root.right))+1;
+	    }
+
+	    int max()
+	    {
+		return maxHelper(root);
+	    }
+
+	    private int maxHelper(node root)
+	    {
+		if(root == null)
+			return Integer.MIN_VALUE;
+
+		return (int)Math.max((int)Math.max(maxHelper(root.left),maxHelper(root.right)),root.data);
+	    }
+
+	private void toStringHelper(node root,StringBuilder ans)
+	{
+		if(root == null)
+			return;
+		StringBuilder help = new StringBuilder();
+
+		if(root.left != null)
+			help.append(""+root.left.data);
+
+		help.append("<-"+root.data+"->");
+
+		if(root.right != null)
+		{
+			help.append(""+root.right.data);
+		}
+		help.append("\n");
+
+		ans.append(help);
+
+		toStringHelper(root.left,ans);
+		toStringHelper(root.right,ans);
+	}
+
+	boolean find(int x)
+	{
+		return findHelper(root,x);
+	}
+
+	private boolean findHelper(node root,int x)
+	{
+		if(root.data == x)
+			return true;
+
+		if(root.left != null)
+		{
+			if(findHelper(root.left,x))
+				return true;
+		}
+
+		if(root.right != null)
+		{
+			if(findHelper(root.right,x))
+				return true;
+		}
+
+		return false;
+	}
+
+	ArrayList<Integer> NTRP(int x)
+	{
+		return NTRPHelper(root,x);
+	}
+
+	ArrayList<Integer> NTRPHelper(node root,int x)
+	{
+		if(root == null)
+			return new ArrayList<>();
+		if(root.data == x)
+		{
+			ArrayList<Integer> base = new ArrayList<>();
+
+			base.add(x);
+			return base;
+		}
+
+		ArrayList<Integer> rresLeft = NTRPHelper(root.left,x);
+
+		if(rresLeft.size() > 0)
+		{
+			rresLeft.add(root.data);
+			return rresLeft;
+		}	
+
+		ArrayList<Integer> rresTwo = NTRPHelper(root.right,x);
+
+		if(rresTwo.size() > 0)
+		{
+			rresTwo.add(root.data);
+			return rresTwo;
+		}
+
+		return new ArrayList<>();
+
 	}
 
 	@Override

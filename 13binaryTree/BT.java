@@ -579,7 +579,35 @@ class BT{
 		removeLeafNodesHelper(root.left);
 		removeLeafNodesHelper(root.right);
 	}
+	int diameter()
+	{
+		int[] ans = new int[1];
+		diameterHelper(root,ans);
+		return ans[0];
+	}
 
+	int diameterHelper(node root,int[] ans)
+	{
+		if(root == null)
+			return -1;
+
+		int ht = -1;
+
+		int htOne = diameterHelper(root.left,ans);
+		int htTwo = diameterHelper(root.right,ans);
+
+		ht = (int)Math.max(htOne,htTwo)+1;
+
+		int diameterThroughtRoot = htOne + htTwo + 2;
+
+		if(diameterThroughtRoot > ans[0])
+		{
+			ans[0] = diameterThroughtRoot;
+		}
+
+		return ht;
+	}
+	
 	@Override
 	public String toString()
 	{

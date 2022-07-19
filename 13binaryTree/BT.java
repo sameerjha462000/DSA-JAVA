@@ -608,6 +608,34 @@ class BT{
 		return ht;
 	}
 	
+	List<Integer> singleChild()
+	{
+		List<Integer> ans = new ArrayList<>();
+
+		singleChildHelper(root,ans);
+
+		return ans;
+	}
+
+	void singleChildHelper(node root,List<Integer> ans)
+	{
+		if(root == null)
+			return ;
+
+		if(root.left != null && root.right == null)
+		{
+			ans.add(root.left.data);
+		}
+
+		if(root.left == null && root.right != null)
+		{
+			ans.add(root.right.data);
+		}
+
+		singleChildHelper(root.left,ans);
+		singleChildHelper(root.right,ans);
+	}
+	
 	@Override
 	public String toString()
 	{

@@ -1366,6 +1366,61 @@ class BT{
 		return path;
 	}
 	
+	boolean similarInShape(BT other)
+	{
+		return similarInShapeHelper(root,other.root);
+	}
+
+	boolean similarInShapeHelper(node rootOne, node rootTwo)
+	{
+		if(rootOne == null && rootTwo != null)
+		{
+			return false;
+		}
+
+		if(rootOne != null && rootTwo == null)
+		{
+			return false;
+		}
+
+		if(rootOne == null && rootTwo == null)
+		{
+			return false;
+		}
+
+		// Now rootOne != null and rootTwo is not null
+		int scoreOfOne = 0;
+		int scoreOfTwo = 0;
+
+		if(rootOne.left != null)
+			scoreOfOne++;
+		if(rootOne.right != null)
+			scoreOfOne++;
+
+		if(rootTwo.left != null)
+			scoreOfTwo++;
+		if(rootTwo.right != null)
+			scoreOfTwo++;
+
+		if((scoreOfOne == 2 && scoreOfTwo == 2)||(scoreOfOne == 0 && scoreOfTwo == 0))
+		{
+			return true;
+		}
+
+		// Now scoreOfOne is 1 and ScoreOfTwo is also 1
+
+		if(rootOne.left != null && rootTwo.left != null)
+		{
+			return similarInShapeHelper(rootOne.left,rootTwo.left);
+		}
+		if(rootOne.right != null && rootTwo.right != null)
+		{
+			return similarInShapeHelper(rootOne.right,rootTwo.left);
+		}
+
+		return false;
+	}
+	
 	@Override
 	public String toString()
 	{

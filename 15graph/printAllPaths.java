@@ -1,4 +1,4 @@
-private static void printAllPaths(ArrayList<edge>[] graph,int src,int dest)
+    private static void printAllPaths(ArrayList<edge>[] graph,int src,int dest)
     {
         StringBuilder sb = new StringBuilder(""+src);
         boolean[] vis = new boolean[graph.length];
@@ -22,7 +22,7 @@ private static void printAllPaths(ArrayList<edge>[] graph,int src,int dest)
             if(!vis[e.nbr])
             {
                 dfs(graph,e.nbr,dest,vis,sb.append(e.nbr));
-                sb.deleteCharAt(sb.length()-1);
+                sb.deleteCharAt(sb.length()-1); // backtrack
             }
         }
 

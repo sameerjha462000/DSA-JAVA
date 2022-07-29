@@ -7,6 +7,7 @@ import java.util.Queue;
 import java.util.HashMap;
 
 class Main{
+    
     public static void main(String[] args) throws IOException{
         initializeIO();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

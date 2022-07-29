@@ -22,6 +22,7 @@ class MainAgain{
 
         return nums;
     }
+    
     public static void main(String[] args) throws IOException{
         initializeIO();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -58,6 +59,7 @@ class MainAgain{
         }
 
     }
+    
     private static void initializeIO(){
         try 
         {

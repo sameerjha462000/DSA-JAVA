@@ -1,4 +1,4 @@
-private static boolean hasPath(ArrayList<edge>[] graph, int src,int dest)
+    private static boolean hasPath(ArrayList<edge>[] graph, int src,int dest)
     {
         boolean[] vis = new boolean[graph.length];
 

@@ -24,6 +24,7 @@ import java.util.Queue;
          * postorder : left right root -- 12 30 37 25 70 62 87 75 50
          **/
 public class Main{
+	
     public static void main(String[] hi) throws IOException{
         initializeIO();    
     	BufferedReader br=new BufferedReader(new InputStreamReader(System.in));     
@@ -50,6 +51,7 @@ public class Main{
         System.out.println(b);
 
     }
+	
     private static void initializeIO(){
         try {
             System.setIn(new FileInputStream("input.txt"));

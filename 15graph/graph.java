@@ -10,21 +10,20 @@ class Main{
     
     private static class Edge{
         int src;
-        int dest;
-
+        int nbr;
         int wt;
 
-        Edge(int src,int dest,int wt)
+        Edge(int src,int nbr,int wt)
         {
             this.src = src;
-            this.dest = dest;
+            this.nbr = nbr;
             this.wt = wt;
         }
 
         @Override
         public String toString()
         {
-            return "{" + src + "->" + dest + "@" + wt + "}";
+            return "{" + src + "->" + nbr + "@" + wt + "}";
         }
     }
     public static void main(String[] args) throws IOException{

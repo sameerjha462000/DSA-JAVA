@@ -1,4 +1,4 @@
-    private static void printAllPaths(ArrayList<edge>[] graph,int src,int dest)
+    private static void printAllPaths(ArrayList<Edge>[] graph,int src,int dest)
     {
         StringBuilder sb = new StringBuilder(""+src);
         boolean[] vis = new boolean[graph.length];
@@ -6,7 +6,7 @@
         dfs(graph,src,dest,vis,sb);
     }
 
-    private static void dfs(ArrayList<edge>[] graph,int src,int dest,boolean[] vis,StringBuilder sb)
+    private static void dfs(ArrayList<Edge>[] graph,int src,int dest,boolean[] vis,StringBuilder sb)
     {
         vis[src] = true;
 

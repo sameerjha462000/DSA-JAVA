@@ -8,13 +8,13 @@ import java.util.HashMap;
 
 class Main{
     
-    private static class edge{
+    private static class Edge{
         int src;
         int dest;
 
         int wt;
 
-        edge(int src,int dest,int wt)
+        Edge(int src,int dest,int wt)
         {
             this.src = src;
             this.dest = dest;
@@ -37,11 +37,11 @@ class Main{
         int E = scn.nextInt(); // No of Edges
 
 
-        ArrayList<edge>[] graph = new ArrayList[V];
+        ArrayList<Edge>[] graph = new ArrayList[V];
 
         for(int i = 0;i < graph.length;i++)
         {
-            graph[i] = new ArrayList<edge>();
+            graph[i] = new ArrayList<Edge>();
         }
         while(E--!= 0)
         {
@@ -51,15 +51,15 @@ class Main{
 
             // Assuming that the graph is bidirectional 
 
-            graph[v1].add(new edge(v1,v2,wt));
-            graph[v2].add(new edge(v2,v1,wt));
+            graph[v1].add(new Edge(v1,v2,wt));
+            graph[v2].add(new Edge(v2,v1,wt));
 
         }
 
         for(int i = 0; i < V ;i++)
         {
             System.out.print(i+"-->");
-            for(edge e : graph[i])
+            for(Edge e : graph[i])
             {
                 System.out.print(e+"  ");
             }

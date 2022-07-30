@@ -1,22 +1,22 @@
-    private static boolean hasPath(ArrayList<edge>[] graph, int src,int dest)
+    private static boolean hasPath(ArrayList<Edge>[] graph, int src,int dest)
     {
         boolean[] vis = new boolean[graph.length];
 
         return dfs(graph,src,dest,vis);
     }
 
-    private static boolean dfs(ArrayList<edge>[] graph,int src,int dest,boolean[] vis)
+    private static boolean dfs(ArrayList<Edge>[] graph,int src,int dest,boolean[] vis)
     {
         vis[src] = true;
 
         if(src == dest)
             return true;
 
-        for(edge e : graph[src])
+        for(Edge e : graph[src])
         {
-            if(!vis[e.dest])
+            if(!vis[e.nbr])
             {
-                if(dfs(graph,e.dest,dest,vis))
+                if(dfs(graph,e.nbr,dest,vis))
                     return true;
             }
         }
